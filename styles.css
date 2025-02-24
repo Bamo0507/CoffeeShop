@@ -70,6 +70,24 @@ img {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.section-title {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block; /*Aseguramos que al ser un bloque se muestre una cosa sobre otra*/
+    background: var(--secondary-color); 
+    margin: 10px auto 0; /* 10 px superior, izq/der automatico - centra, 0 inferior*/
+    border-radius: var(--border-radius-s);
+    
+}
 /* ------------------------------------------------------------------------------------ */
 
 /* NavBar Styling */
@@ -113,13 +131,13 @@ header .navbar {
     transition: 0.3s ease;
 }
 
-.navbar :where(#menu-close-button, #menu-open-button) {
-    display: none;
-}
-
 .navbar .nav-menu .nav-link:hover {
     background: var(--secondary-color); /*color del fondo*/
     color: var(--primary-color)
+}
+
+.navbar :is(#menu-close-button, #menu-open-button) {
+    display: none;
 }
 
 /* Hero Section Styling */
@@ -195,9 +213,62 @@ header .navbar {
     margin-right: 30px;
 
 }
+
+/* About Section */
+.about-section{
+    padding: 120px 0;
+    background: var(--light-pink-color);
+}
+
+.about-section .section-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Espacio entre elementos gap */
+    gap: 50px; 
+}
+
+.about-section .about-image-wrapper .about-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius-circle);
+}
+
+.about-section .about-details {
+    max-width: 50%;
+}
+
+
+.about-section .about-details .section-title {
+    padding: 0px;
+}
+
+.about-section .about-details .text {
+    line-height: 30px;
+    margin: 50px 0 30px;
+    text-align: center;
+    font-size: var(--font-size-m);
+}
+
+.about-section .social-link-list {
+    display:flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.about-section .social-link-list .social-link {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    transition: 0.2s ease;
+}
+
+.about-section .social-link-list .social-link:hover{
+    color: var(--secondary-color);
+}
+
 /*------------------------------------------------------------------------*/
 /*Making it Responsive*/
-
 /*rESPONSIVE MEDIA QUERY CODE FOR MAX WIDTH 900px*/
 @media screen and (max-width: 900px) {
     /*ajustar la font size para pantallas pequenias*/
@@ -221,7 +292,7 @@ header .navbar {
     }
 
     /*Este es el equivalente a poner .navbar #menu-close-button, .navbar #menu-open-button*/
-    .navbar :where(#menu-close-button, #menu-open-button){
+    .navbar :is(#menu-close-button, #menu-open-button){
         font-size: var(--font-size-l);
         display: block;
     }
@@ -291,7 +362,8 @@ header .navbar {
         margin-right: 0;
     }
 
-    .hero-section .hero-details :is(.subtitle, .description){
+    .hero-section .hero-details :is(.subtitle, .description),
+    .about-section .about-details {
         max-width: 100%;
     }
 
@@ -299,5 +371,20 @@ header .navbar {
         justify-content: center;
     }
 
+    .about-section .section-content {
+        flex-direction: column-reverse;
+
+        gap: 70px;
+    }
+
+    /* Agarra 100% de ancho y alto, pero no deja que pase de 250 px, mantiene una proporcion 1:1 - cuadrada */
+    .about-section .about-image-wrapper .about-image {
+        width: 100%;
+        height: 100%;
+        max-width: 250px;
+        aspect-ratio: 1;
+    }
+
 }
 /*------------------------------------------------------------------------*/
+
