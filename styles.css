@@ -1,0 +1,116 @@
+/* Importar otro tipo de FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+/* Revisar lo de border box y eso */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+/* Variables*/
+:root {
+    /* Colores */
+    --white-color: #fff;
+    --dark-color: #252525;
+    --primary-color: #3b141c;
+    --secondary-color: #f3961c;
+    --light-pink-color: #faf4f5;
+    --medium-gray-color: #ccc;
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font Weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border radius */
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /* Site max width */
+    --site-max-width: 1300px;
+}
+
+/* Styles for whole site */
+
+/* Especialmente al andar hacinedo el nav bar, es bueno quitar los circulos del UL */
+ul {
+    list-style: none;
+}
+
+/* Se quita los disenios del ANCHOR TAG para que no salga underlined, ni el color para clickearse*/
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+}
+
+.section-content {
+    max-width: var(--site-max-width); /*Garantizamos que el contenido tome como espacio algo menor al real*/
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* ------------------------------------------------------------------------------------ */
+
+/* NavBar Styling */
+
+header {
+    background: var(--primary-color);
+}
+
+/* Ya para darle forma de NavBar */
+header .navbar {
+    display: flex;
+    padding: 20px; /*padding de 20px en todo alrededor*/
+    align-items: center; /*centrados verticalmente*/
+    justify-content: space-between; /*Empujar a mis 2 elementos, el class logo y el menu a extremos*/
+}
+
+.navbar .nav-menu {
+    display: flex; /*Indicar que queremos manejar el menu como un flex*/
+    gap: 10px; /*Manejar el espaciado entre los elementos*/
+}
+
+/* Selector para jalar la clase hija de .nav-logo, que es a su vez hijo de .navbar */
+.navbar .nav-logo .logo-text {
+    color: var(--white-color);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold)
+}
+
+/* Selector para jalar todas las clases hijas .nav-link de la clase .navbar */
+/* Aqui se jalan pero los elementos del nav bar*/
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px; /* padding vertical luego horizontal */
+    color: var(--white-color); /*color del texto*/
+
+    font-size: var(--font-size-m);
+
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+    background: var(--secondary-color); /*color del fondo*/
+    color: var(--primary-color)
+}
