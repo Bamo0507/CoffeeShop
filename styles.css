@@ -354,6 +354,39 @@ header .navbar {
 }
 
 /* ------------------------------------------------------------------------------------ */
+/* Gallery Section */
+
+.gallery-section {
+    padding: 50px 0 100px;
+}
+
+.gallery-section .gallery-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 46px;
+}
+
+.gallery-section .gallery-list .gallery-item{
+    width: calc(100%/3 - 32px); /*Se le resta lo que 
+    se deja de gap entre los elementos de la lista
+    -- TENGO QUE TENER CUIDADO CON LOS ESPACIOS*/
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
+}
+
+.gallery-section .gallery-item .gallery-image {
+    width: 100%;
+    height: 100%;
+    /* Coloca el cursor como una lupa con + */
+    cursor: zoom-in; 
+    transition: 0.3s ease;
+}
+
+.gallery-section .gallery-item:hover .gallery-image{
+    transform: scale(1.3);
+}
+/*------------------------------------------------------------------------*/
+
 /*------------------------------------------------------------------------*/
 /*RESPONSIVE MEDIA QUERY CODE FOR MAX WIDTh 1024px*/
 /* 
@@ -531,6 +564,17 @@ Our Menu Section
         font-size: var(--font-size-l);
     }
 
+    /* 
+    Gallery Section
+    */
+    .gallery-section .gallery-list {
+        gap: 30px;
+    }
+
+    .gallery-section .gallery-list .gallery-item {
+        width: calc(100%/2 - 30px);
+    }
+
 }
 /*------------------------------------------------------------------------*/
 
@@ -543,7 +587,8 @@ Responsive media query for max width 640px
         gap: 60px;
     }
 
-    .menu-section .menu-list .menu-item {
+    .menu-section .menu-list .menu-item,
+    .testimonials-section .gallery-list .gallery-item {
         width: 100%;
     }
 
