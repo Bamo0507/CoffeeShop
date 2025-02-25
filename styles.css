@@ -139,6 +139,7 @@ header .navbar {
 .navbar :is(#menu-close-button, #menu-open-button) {
     display: none;
 }
+/* ------------------------------------------------------------------------------------ */
 
 /* Hero Section Styling */
 .hero-section {
@@ -213,6 +214,7 @@ header .navbar {
     margin-right: 30px;
 
 }
+/* ------------------------------------------------------------------------------------ */
 
 /* About Section */
 .about-section{
@@ -238,7 +240,6 @@ header .navbar {
 .about-section .about-details {
     max-width: 50%;
 }
-
 
 .about-section .about-details .section-title {
     padding: 0px;
@@ -266,10 +267,74 @@ header .navbar {
 .about-section .social-link-list .social-link:hover{
     color: var(--secondary-color);
 }
+/* ------------------------------------------------------------------------------------ */
+/* Menu Section */
+.menu-section {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 0px 0px 50px; /* Padding Top left/right Bottom */
+}
+
+.menu-section .menu-list {
+    display: flex;          /* Convierte los elementos internos en un contenedor flexible */
+    flex-wrap: wrap;        /* Permite que los elementos se ajusten a múltiples líneas si no caben en una sola */
+    align-items: center;    /* Centra verticalmente los elementos dentro del contenedor */
+    gap: 110px;
+    justify-content: space-between;
+}
+
+.menu-section .menu-list .menu-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100%/3 - 110px);
+}
+
+.menu-section .menu-list .menu-item .menu-image {
+    max-width: 83%;
+    aspect-ratio: 1;
+}
+
+/* ------------------------------------------------------------------------------------ */
 
 /*------------------------------------------------------------------------*/
 /*Making it Responsive*/
+/*rESPONSIVE MEDIA QUERY CODE FOR MAX WIDTh 1024px*/
+/* 
+Our Menu Section
+*/
+@media screen and (max-width: 1024px){
+    .menu-section .menu-list {
+        gap: 80px;
+    }
+
+    .menu-section .menu-list .menu-item {
+        width: calc(100%/3 - 60px);
+    }
+
+    .menu-section .menu-list .menu-item .menu-image {
+        max-width: 83%;
+        aspect-ratio: 1;
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
+
+    .menu-section .menu-list .menu-item .name {
+        margin: 12px 0;
+        font-size: var(--font-size-l);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .menu-section .menu-list .menu-list .text {
+        font-size: var(--font-size-m);
+    }
+}
 /*rESPONSIVE MEDIA QUERY CODE FOR MAX WIDTH 900px*/
+/*
+4 nav and About Us Section
+*/
 @media screen and (max-width: 900px) {
     /*ajustar la font size para pantallas pequenias*/
     :root {
@@ -280,7 +345,7 @@ header .navbar {
     }
 
     /* Antes de dibujar el header, hace que se vea borroso, mientras se tenga activado el show mobile */
-    body.show-mobile-menu header::before {
+    body.show-mobile-menu header::after{
         content: "";
         position: fixed;
         left: 0;
@@ -385,6 +450,53 @@ header .navbar {
         aspect-ratio: 1;
     }
 
+    /* 
+    Menu Section
+     */
+    .menu-section .menu-list {
+        gap: 30px;
+    }
+
+    .menu-section .menu-list .menu-item {
+        width: calc(100%/2 - 30px);
+    }
+
+    .menu-section .menu-list .menu-item .menu-image {
+        max-width: 83%;
+        aspect-ratio: 1;
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
+
+    .menu-section .menu-list .menu-item .name {
+        margin: 12px 0;
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+    }
+    .menu-section .menu-list .menu-list .text {
+        font-size: var(--font-size-l);
+    }
+
 }
 /*------------------------------------------------------------------------*/
+/* 
+Menu Section - Mobile screens
+*/
+@media screen and (max-width: 640px){
+    .menu-section .menu-list {
+        gap: 60px;
+    }
+    
+    .menu-section .menu-list .menu-item {
+        width: 100%;
+    }
 
+    .menu-section .menu-list .menu-item .menu-image {
+        max-width: 70%;
+        aspect-ratio: 1;
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
+
+    
+}
