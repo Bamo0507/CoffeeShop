@@ -86,7 +86,6 @@ img {
     background: var(--secondary-color); 
     margin: 10px auto 0; /* 10 px superior, izq/der automatico - centra, 0 inferior*/
     border-radius: var(--border-radius-s);
-    
 }
 /* ------------------------------------------------------------------------------------ */
 
@@ -298,10 +297,65 @@ header .navbar {
 }
 
 /* ------------------------------------------------------------------------------------ */
+/* Testimonials Section */
 
+.testimonials-section {
+    padding: 50px 0 100px;
+    background-color: var(--light-pink-color);
+}
+
+.testimonials-section .testimonial {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonials-section .testimonial .name {
+    margin-bottom: 16px;
+    font-size: var(--font-size-m);
+}
+
+.testimonials-section .testimonial .feedback {
+    line-height: 25px;
+    text-align: center;
+}
+
+
+.testimonials-section .testimonial .user-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    border-radius: var(--border-radius-circle);
+}
+
+.testimonials-section .slider-wrapper {
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+
+.testimonials-section .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background-color: var(--secondary-color);
+}
+
+.testimonials-section .swiper-slide-button {
+    color: var(--secondary-color);
+    transition: 0.3s ease;
+    margin-top: -50px
+}
+
+.testimonials-section .swiper-slide-button:hover{
+    color: var(--primary-color);
+}
+
+/* ------------------------------------------------------------------------------------ */
 /*------------------------------------------------------------------------*/
-/*Making it Responsive*/
-/*rESPONSIVE MEDIA QUERY CODE FOR MAX WIDTh 1024px*/
+/*RESPONSIVE MEDIA QUERY CODE FOR MAX WIDTh 1024px*/
 /* 
 Our Menu Section
 */
@@ -331,10 +385,10 @@ Our Menu Section
         font-size: var(--font-size-m);
     }
 }
-/*rESPONSIVE MEDIA QUERY CODE FOR MAX WIDTH 900px*/
-/*
-4 nav and About Us Section
-*/
+/*------------------------------------------------------------------------*/
+
+
+/*RESPONSIVE MEDIA QUERY CODE FOR MAX WIDTH 900px*/
 @media screen and (max-width: 900px) {
     /*ajustar la font size para pantallas pequenias*/
     :root {
@@ -479,14 +533,16 @@ Our Menu Section
 
 }
 /*------------------------------------------------------------------------*/
+
+
 /* 
-Menu Section - Mobile screens
+Responsive media query for max width 640px
 */
 @media screen and (max-width: 640px){
     .menu-section .menu-list {
         gap: 60px;
     }
-    
+
     .menu-section .menu-list .menu-item {
         width: 100%;
     }
@@ -498,5 +554,15 @@ Menu Section - Mobile screens
         object-fit: contain;
     }
 
+    .testimonials-section .slider-wrapper {
+        margin: 0 0 0;
+    }
+
+    /* Hide on small screens */
+    .testimonials-section .swiper-slide-button {
+        display: none;
+    }
+
     
 }
+/*------------------------------------------------------------------------*/

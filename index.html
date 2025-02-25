@@ -9,6 +9,12 @@
 
     <!--Linking Font Awesoome for SVG Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Linking Swiper for Testimonials -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />   
 </head>
 
 <body>
@@ -151,10 +157,61 @@
                 </ul>
             </div>
         </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="section-content">
+                <div class="slider-container swiper">
+                    <div class="slider-wrapper swiper">
+                        <ul class="testimonials-list swiper-wrapper">
+
+                            <li class="testimonial swiper-slide">
+                                <img src="resources/user-1.jpg" alt="User" class="user-image">
+                                <h3 class="name">Sarah Johnson</h3>
+                                <i class="feedback">"Loved the French roast. Perfectly balanced and rich. Will order again!"</i>
+                            </li>
+
+                            <li class="testimonial swiper-slide">
+                                <img src="resources/user-2.jpg" alt="User" class="user-image">
+                                <h3 class="name">James Wilson</h3>
+                                <i class="feedback">"Great espresso blend! smooth and bold flavor. Fast shipping too!"</i>
+                            </li>
+
+                            <li class="testimonial swiper-slide">
+                                <img src="resources/user-3.jpg" alt="User" class="user-image">
+                                <h3 class="name">Michael Brown</h3>
+                                <i class="feedback">"Fantastic mocha flavor. Fresh and aromatic. Quick shipping!"</i>
+                            </li>
+
+                            <li class="testimonial swiper-slide">
+                                <img src="resources/user-4.jpg" alt="User" class="user-image">
+                                <h3 class="name">Emily Harris</h3>
+                                <i class="feedback">"Excellent quality! Fresh beans and quick delivery. Highly recommend."</i>
+                            </li>
+
+                            <li class="testimonial swiper-slide">
+                                <img src="resources/user-5.jpg" alt="User" class="user-image">
+                                <h3 class="name">Anthony Thompson</h3>
+                                <i class="feedback">"Best decaf I've tried! Smooth and flavorful. Arrvied promptly."</i>
+                            </li>
+
+                        </ul>
+                        <!-- Swiper classes -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-slide-button swiper-button-next"></div>
+                        <div class="swiper-slide-button swiper-button-prev"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Link 2 swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
+    <!-- link to my js file -->
     <script src="script.js"></script>
 </body>
 
