@@ -10,6 +10,12 @@
     font-family: "Poppins", serif;
 }
 
+/* Comportamiento General para HTML */
+html {
+    /* Esto permite que se scrollee de mejor forma  */
+    scroll-behavior: smooth;
+}
+
 /* Variables*/
 :root {
     /* Colores */
@@ -305,6 +311,8 @@ header .navbar {
 }
 
 .testimonials-section .testimonial {
+    /* Permite deshabilitar la seleccion si arrastran */
+    user-select: none;
     display: flex;
     flex-direction: column;
     padding: 35px;
@@ -456,6 +464,47 @@ Contact Us Section
 }
 
 /*------------------------------------------------------------------------*/
+/* 
+Footer section
+*/
+
+.footer-section {
+    padding: 20px 0;
+    background: var(--dark-color);
+}
+
+.footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text, .social-link,
+.policy-link) {
+    color: var(--white-color);
+    transition: 0.2s ease;
+}
+
+.footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-section .social-link-list .social-link {
+    font-size: var(--font-size-l);
+}
+
+.footer-section .social-link-list .social-link:hover,
+.footer-section .policy-text .policy-link:hover {
+    color: var(--secondary-color);
+}
+
+.footer-section .policy-text .separator {
+    color: var(--white-color);
+    margin: 0 5px;
+}
+
+/*------------------------------------------------------------------------*/
 /*RESPONSIVE MEDIA QUERY CODE FOR MAX WIDTh 1024px*/
 /* 
 Our Menu Section
@@ -500,7 +549,8 @@ Our Menu Section
     }
 
     /* Antes de dibujar el header, hace que se vea borroso, mientras se tenga activado el show mobile */
-    body.show-mobile-menu header::after{
+    body.show-mobile-menu header::before{
+        /* Con el before, en vez de after para que sea antes del show-mobile, asi se logra diferenciar */
         content: "";
         position: fixed;
         left: 0;
@@ -684,6 +734,11 @@ Responsive media query for max width 640px
     /* Hide on small screens */
     .testimonials-section .swiper-slide-button {
         display: none;
+    }
+
+    .footer-section .section-content {
+        flex-direction: column;
+        gap: 20px;
     }
     
 }
