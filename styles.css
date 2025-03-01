@@ -372,6 +372,7 @@ header .navbar {
     display: flex;
     flex-wrap: wrap;
     gap: 46px;
+    justify-content: center;
 }
 
 .gallery-section .gallery-list .gallery-item{
@@ -739,6 +740,14 @@ Responsive media query for max width 640px
     .footer-section .section-content {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .gallery-section .gallery-list {
+        gap: 20px;
+    }
+
+    .gallery-section .gallery-list .gallery-item {
+        width: calc(100%/1 - 30px);
     }
     
 }
